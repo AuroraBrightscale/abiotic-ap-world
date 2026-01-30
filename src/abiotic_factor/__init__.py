@@ -1,6 +1,5 @@
 """Abiotic Factor AP world"""
 
-# TODO This import should be "from worlds.AutoWorld..."
 from worlds.AutoWorld import World, WebWorld
 from BaseClasses import ItemClassification
 from .regions import regions, AbioticRegion
@@ -17,8 +16,8 @@ class AbioticFactorWorld(World):
     """Abiotic Factor AP World"""
     game = "Abiotic Factor"
     web = AbioticFactorWebWorld()
-    item_name_to_id = {}
-    location_name_to_id = {}
+    item_name_to_id = { name: data.code for name, data in items.items() }
+    location_name_to_id = locations
     origin_region_name = "Office Sector Plaza"
 
     def create_item(self, name: str) -> AbioticItem:
