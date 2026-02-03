@@ -1,3 +1,4 @@
 [submodule "archipelago"]
 	path = archipelago
 	url = https://github.com/archipelagomw/archipelago
+	branch = tags/0.6.6

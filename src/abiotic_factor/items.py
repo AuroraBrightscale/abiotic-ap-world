@@ -13,6 +13,7 @@ class AbioticItemData(NamedTuple):
 
 
 items: dict[str, AbioticItemData] = {
-    "Random Resource": AbioticItemData(0x00, ItemClassification.filler),
+    "Random Resource": AbioticItemData(0x01, ItemClassification.filler),
+    "Progressive Keypad Hacker": AbioticItemData(0xE0),
     "The Golden Leyak": AbioticItemData(0xFF)
 }
