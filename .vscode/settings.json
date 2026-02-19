@@ -1,14 +1,7 @@
 {
-  "python.terminal.activateEnvironment": false,
-  "python.autoComplete.extraPaths": [
-    "archipelago"
-  ],
-  "autopep8.path": [
-    "src",
-    "archipelago"
-  ],
   "editor.defaultFormatter": "ms-python.black-formatter",
   "[python]": {
     "editor.defaultFormatter": "ms-python.black-formatter"
-  }
+  },
+  "ty.configurationFile": "ty.toml"
 }
