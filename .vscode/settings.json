@@ -3,5 +3,8 @@
   "[python]": {
     "editor.defaultFormatter": "ms-python.black-formatter"
   },
-  "ty.configurationFile": "ty.toml"
+  "ty.configurationFile": "ty.toml",
+  "[jsonc]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  }
 }

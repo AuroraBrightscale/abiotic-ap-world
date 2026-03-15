@@ -14,27 +14,39 @@ class AbioticItemData(NamedTuple):
 
 
 items: dict[str, AbioticItemData] = {
+    #########
     # Junk - 0x0000
+    #########
     "Random Resource": AbioticItemData(0x0001, ItemClassification.filler),
+    #########
     # Recipe Unlocks - 0x0100
-    "Progressive Keypad Hacker": AbioticItemData(0x0101),
+    #########
+    "Recipe - Progressive Keypad Hacker": AbioticItemData(0x0101),
+    "Recipe - Energy Brick": AbioticItemData(0x0102),
+    #########
     # Simple Door Unlocks - 0x0200
+    #########
     "Door Key: Cafeteria Break Room": AbioticItemData(
-        0x0201, ItemClassification.useful
-    ),
-    "Door Key: Door To Level 3 Stairs": AbioticItemData(
         0x0202, ItemClassification.useful
     ),
-    "Door Key: Office Sector Level 2 Door Next to Blast Door": AbioticItemData(
+    "Door Key: Door To Level 3 Stairs": AbioticItemData(
         0x0203, ItemClassification.useful
     ),
+    "Door Key: Office Sector Level 2 Door Next to Blast Door": AbioticItemData(
+        0x0204, ItemClassification.useful
+    ),
+    #########
     # Button Door Unlocks - 0x0300
-    "Door Key: Cafeteria Shutters": AbioticItemData(0x0301, ItemClassification.useful),
+    #########
+    # "Door Key: Cafeteria Shutters": AbioticItemData(0x0301, ItemClassification.useful),
     "Door Key: Office Sector Plaza Blast Door 1": AbioticItemData(
         0x0302, ItemClassification.filler
     ),
     "Door Key: Office Sector Plaza Blast Door 2": AbioticItemData(
         0x0303, ItemClassification.filler
     ),
-    "The Golden Leyak": AbioticItemData(0xFF),
+    #########
+    # Testing - maybe mark the endgame item?
+    #########
+    "The Golden Leyak": AbioticItemData(0xFFFF),
 }

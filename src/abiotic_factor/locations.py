@@ -1,4 +1,4 @@
-from typing import NamedTuple, Mapping
+from typing import NamedTuple
 from enum import Enum
 from BaseClasses import Location
 
@@ -15,6 +15,7 @@ class LocationType(int, Enum):
     DOOR = 1
     BUTTON_DOOR = 2
     KEYPAD_DOOR = 3
+    RESEARCH = 4
 
 
 class AbioticLocation(Location):
@@ -36,7 +37,9 @@ def build_locations() -> dict[str, int]:
 locations_office_plaza: dict[str, AbioticLocationData] = {
     # Some of these are checks that for now are going to be open automatically at
     # the start of the seed. Maybe change this behavior later?
+    #########
     # Objectives - 0x0000
+    #########
     # "Objective Complete - Open the Cafeteria Door": AbioticLocationData(
     #     0x0001, LocationType.OBJECTIVE, LevelRef.NA, "quest_cafeteriadoor"
     # ),
@@ -49,13 +52,24 @@ locations_office_plaza: dict[str, AbioticLocationData] = {
     "Objective Complete - Open Silo 3 to Retrieve Power Cells": AbioticLocationData(
         0x0004, LocationType.OBJECTIVE, LevelRef.NA, "quest_opensilo3"
     ),
+    #########
+    # Recipe Research - 0x0100
+    #########
+    "Research - Tier 1 Keypad Hacker": AbioticLocationData(
+        0x0101, LocationType.RESEARCH, LevelRef.NA, "recipe_keypadhacker"
+    ),
+    "Research - Energy Brick": AbioticLocationData(
+        0x0102, LocationType.RESEARCH, LevelRef.NA, "recipe_brick_power"
+    ),
+    #########
     # One Way Doors - 0x0200
+    #########
     # "Office Sector Cafeteria Middle Door": AbioticLocationData(
     #     0x0201, LocationType.DOOR, LevelRef.FACILITY_OFFICE_1, "TODO"
     # ),
-    # "Office Sector Cafeteria Door to Break Room": AbioticLocationData(
-    #     0x0202, LocationType.DOOR, LevelRef.FACILITY_OFFICE_1, "SimpleDoor_ParentBP_C_8"
-    # ),
+    "Office Sector Cafeteria Door to Break Room": AbioticLocationData(
+        0x0202, LocationType.DOOR, LevelRef.FACILITY_OFFICE_1, "SimpleDoor_ParentBP_C_8"
+    ),
     "Office Sector Door To Level 3 Stairs": AbioticLocationData(
         0x0203,
         LocationType.DOOR,
@@ -65,26 +79,30 @@ locations_office_plaza: dict[str, AbioticLocationData] = {
     "Office Sector Level 2 Door Next to Blast Door": AbioticLocationData(
         0x0204, LocationType.DOOR, LevelRef.FACILITY_OFFICE_4, "SimpleDoor_ParentBP_C_9"
     ),
+    #########
     # Doors controlled by buttons - 0x0300
-    "Office Sector Cafeteria Shutters": AbioticLocationData(
-        0x0301,
-        LocationType.BUTTON_DOOR,
-        LevelRef.FACILITY_OFFICE_1,
-        "Button_Generic_C_1|SecurityDoor_C_3",
-    ),
+    #########
+    # "Office Sector Cafeteria Shutters": AbioticLocationData(
+    #     0x0301,
+    #     LocationType.BUTTON_DOOR,
+    #     LevelRef.FACILITY_OFFICE_1,
+    #     "Button_Generic_C_1|SecurityDoor_C_3",
+    # ),
     "Office Sector Plaza Blast Door 1": AbioticLocationData(
         0x0302,
         LocationType.BUTTON_DOOR,
         LevelRef.FACILITY_OFFICE_1,
-        "Button_Generic_C_5|BlastDoor_C_2",
+        "BlastDoor_C_2",
     ),
     "Office Sector Plaza Blast Door 2": AbioticLocationData(
         0x0303,
         LocationType.BUTTON_DOOR,
         LevelRef.FACILITY_OFFICE_1,
-        "Button_Generic_C_2|BlastDoor_C_3",
+        "BlastDoor_C_3",
     ),
+    #########
     # Doors controlled by keypads - 0x0400
+    #########
     "Office Sector Security Office Keypad": AbioticLocationData(
         0x0401,
         LocationType.KEYPAD_DOOR,
@@ -103,8 +121,4 @@ locations_office_plaza: dict[str, AbioticLocationData] = {
         LevelRef.FACILITY_OFFICE_4,
         "Button_Keypad_Tier1_C_0|SecurityDoor_Small_C_0",
     ),
-    # "Test Location 1": 0x0001,
-    # "Test Location 2": 0x0002,
-    # "Test Location 3": 0x0003,
-    # "Manufacturing West - Power Cell Placed": 0x0004,
 }
