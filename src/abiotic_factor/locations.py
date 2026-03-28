@@ -37,6 +37,11 @@ def build_locations() -> dict[str, int]:
 locations_office_plaza: dict[str, AbioticLocationData] = {
     # Some of these are checks that for now are going to be open automatically at
     # the start of the seed. Maybe change this behavior later?
+    #
+    # NOTE: The objective refs are the *next* objective that the player will get after
+    # completing the location's objective. So when the current objective updates to
+    # <ref>, that means that the previous objective was completed and the check
+    # should be sent out
     #########
     # Objectives - 0x0000
     #########
@@ -44,13 +49,13 @@ locations_office_plaza: dict[str, AbioticLocationData] = {
     #     0x0001, LocationType.OBJECTIVE, LevelRef.NA, "quest_cafeteriadoor"
     # ),
     "Objective Complete - Report to Sector Security Officer": AbioticLocationData(
-        0x0002, LocationType.OBJECTIVE, LevelRef.NA, "quest_findofficer"
+        0x0002, LocationType.OBJECTIVE, LevelRef.NA, "quest_evacuateoffices"
     ),
     "Objective Complete - Evacuate Sector Via Manufacturing": AbioticLocationData(
-        0x0003, LocationType.OBJECTIVE, LevelRef.NA, "quest_evacuateoffices"
+        0x0003, LocationType.OBJECTIVE, LevelRef.NA, "quest_opensilo3"
     ),
     "Objective Complete - Open Silo 3 to Retrieve Power Cells": AbioticLocationData(
-        0x0004, LocationType.OBJECTIVE, LevelRef.NA, "quest_opensilo3"
+        0x0004, LocationType.OBJECTIVE, LevelRef.NA, "quest_flathill"
     ),
     #########
     # Recipe Research - 0x0100
