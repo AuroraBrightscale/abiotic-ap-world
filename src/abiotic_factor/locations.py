@@ -54,8 +54,11 @@ locations_office_plaza: dict[str, AbioticLocationData] = {
     "Objective Complete - Evacuate Sector Via Manufacturing": AbioticLocationData(
         0x0003, LocationType.OBJECTIVE, LevelRef.NA, "quest_opensilo3"
     ),
+    "Objective Complete - Find Someone Who Knows About Power Cells": AbioticLocationData(
+        0x0004, LocationType.OBJECTIVE, LevelRef.NA, "quest_opensilo3"
+    ),
     "Objective Complete - Open Silo 3 to Retrieve Power Cells": AbioticLocationData(
-        0x0004, LocationType.OBJECTIVE, LevelRef.NA, "quest_flathill"
+        0x0005, LocationType.OBJECTIVE, LevelRef.NA, "quest_flathill"
     ),
     #########
     # Recipe Research - 0x0100
